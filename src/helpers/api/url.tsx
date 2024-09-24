@@ -1,1 +1,0 @@
-export const apiUrl = 'http://134.122.77.107:8085/swagger-ui/index.html#/'
