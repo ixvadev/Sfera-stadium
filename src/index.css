@@ -15,4 +15,18 @@
   .active{
     background-color: red;
   }
+
+  .dashboard {
+    padding: 20px;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .chart {
+    width: 30%;
+  }
+  
   
