@@ -8,6 +8,7 @@ import Client from "./pages/client/client";
 import Help from "./components/help";
 import Header from "./components/header";
 import Tabs from "./components/tabs";
+import NotConfirmed from "./pages/master/notConfirmed";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/tabs" element={<Tabs />} />
         <Route path="/master" element={<Master />} />
+        <Route path="/master/notConfirmed" element={<NotConfirmed />} />
+        
         <Route path="/client" element={<Client />} />
       </Routes>
       <ToastContainer />
