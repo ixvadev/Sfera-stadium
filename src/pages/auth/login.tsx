@@ -48,28 +48,29 @@ const Login: React.FC = () => {
 
     return (
         <div>
-            <div id="authentication-modal" tabIndex={-1} aria-hidden="true" className="flex mx-auto  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div className="relative p-4 w-full max-w-md max-h-full">
-                    <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                Sign in to our platform
+            <div id="authentication-modal" tabIndex={-1} aria-hidden="true" className="flex mx-auto bg-[#f1f3f5]  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div className="relative w-full max-w-md max-h-full"> 
+                    <div className="relative p-4 bg-[#ffffff] rounded-lg shadow">
+                        <div className="items-center justify-between px-4 pt-[20px] rounded-t dark:border-gray-600">
+                            <h3 className="text-xl font-bold text-gray-900">
+                                Sign in
                             </h3>
-
+                            <p className="text-sm font-medium py-2 text-gray-900">Login to website if you can because we don't we don't have a login flow yet</p>
                         </div>
-                        <div className="p-4 md:p-5">
+                        
+                        <div className="p-4 -md:p-5 pb-[20px]">
                             <div>
-                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your user phone</label>
-                                <input ref={userName} type="email" name="email" id="email" className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                                <label className="block mb-2 text-sm font-bold text-gray-900">Username</label>
+                                <input ref={userName} type="email" name="email" id="email" className=" bg-[#f1f3f5] border border-gray-300 text-gray-900 text-sm font-bold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[f1f3f5] dark:border-gray-500 dark:placeholder-gray-900 dark:text-[#000000]" placeholder="Username" required />
                             </div>
                             <div>
-                                <label className="mt-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                                <input ref={parol} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                                <label className="mt-5 block mb-2 text-sm font-bold text-gray-900">Password</label>
+                                <input ref={parol} name="password" id="password" placeholder="••••••••" className="bg-[#f1f3f5] border border-gray-300 text-gray-900 text-sm font-bold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[f1f3f5] dark:border-gray-500 dark:placeholder-gray-900 dark:text-[#000000]" required />
                             </div>
                             <div className="flex justify-between">
 
                             </div>
-                            <button onClick={getLogin} type="submit" className="mt-5 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                            <button onClick={getLogin} type="submit" className="mt-5 w-full text-white bg-[#000000] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#444545]">Sign In</button>
                         </div>
                     </div>
                 </div>
