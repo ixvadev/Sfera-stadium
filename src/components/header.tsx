@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-        <div className="w-full bg-[#D1D3D4] h-[80px] flex justify-between">
+        <div className="w-full bg-[#f1f3f5] h-[80px] flex justify-between">
             <div className="text-[20px] px-[240px] m-[20px]">
                 <i className="fa-solid fa-bars-staggered"></i>
             </div>
