@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { div } from 'framer-motion/client';
 
 ChartJS.register(
   CategoryScale,
@@ -65,30 +66,33 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex justify-end mb-4">
-        <label className="mr-2">Enter Year:</label>
-        <input
-          type="number"
-          value={year}
-          onChange={(e) => setYear(parseInt(e.target.value))}
-          className="border rounded px-2 py-1"
-        />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold mb-4">Order Count</h2>
-          <Line data={{...data, datasets: [data.datasets[0]]}} options={options} />
+    <div>
+        <div className="flex justify-end m-4">
+            <label className="mr-2 text-lg font-bold">Enter Year:</label>
+            <input
+            type="number"
+            value={year}
+            onChange={(e) => setYear(parseInt(e.target.value))}
+            className="border rounded px-2 py-1 bg-[#f1f3f5]"
+            />
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold mb-4">Total Price</h2>
-          <Line data={{...data, datasets: [data.datasets[1]]}} options={options} />
+        <div className="m-[30px] p-8 bg-[#f1f3f5] rounded-[15px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+                <h2 className="text-lg font-bold mb-4">Order Count</h2>
+                <Line data={{...data, datasets: [data.datasets[0]]}} options={options} />
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+                <h2 className="text-lg font-bold mb-4">Total Price</h2>
+                <Line data={{...data, datasets: [data.datasets[1]]}} options={options} />
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+                <h2 className="text-lg font-bold mb-4">Client Count</h2>
+                <Line data={{...data, datasets: [data.datasets[2]]}} options={options} />
+            </div>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold mb-4">Client Count</h2>
-          <Line data={{...data, datasets: [data.datasets[2]]}} options={options} />
         </div>
-      </div>
+
     </div>
   );
 };

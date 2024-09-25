@@ -21,7 +21,7 @@ function App() {
         <Route path="/tabs" element={<Tabs />} />
         <Route path="/master" element={<Master />} />
         <Route path="/master/notConfirmed" element={<NotConfirmed />} />
-        
+        <Route path="/master/confirmed" element={<Master />} />
         <Route path="/client" element={<Client />} />
       </Routes>
       <ToastContainer />
