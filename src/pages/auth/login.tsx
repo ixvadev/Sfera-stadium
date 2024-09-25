@@ -61,7 +61,7 @@ const Login: React.FC = () => {
                         <div className="p-4 -md:p-5 pb-[20px]">
                             <div>
                                 <label className="block mb-2 text-sm font-bold text-gray-900">Username</label>
-                                <input ref={userName} type="email" name="email" id="email" className=" bg-[#f1f3f5] border border-gray-300 text-gray-900 text-sm font-bold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[f1f3f5] dark:border-gray-500 dark:placeholder-gray-900 dark:text-[#000000]" placeholder="Username" required />
+                                <input ref={userName} type="email" name="email" id="email" className=" bg-[#f1f3f5] border border-gray-300 text-gray-900 text-sm font-bold rounded-lg focus:ring-black-500 focus:border-black-500 block w-full p-2.5 dark:bg-[f1f3f5] dark:border-gray-500 dark:placeholder-gray-900 dark:text-[#000000]" placeholder="Username" required />
                             </div>
                             <div>
                                 <label className="mt-5 block mb-2 text-sm font-bold text-gray-900">Password</label>
