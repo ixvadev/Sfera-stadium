@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import Login from "./pages/auth/login"
-import Admin from "./pages/admin"
+import Admin from "./pages/admin/admin"
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
-import Master from "./pages/master";
-import Client from "./pages/client";
+import Master from "./pages/master/master";
+import Client from "./pages/client/client";
 import Help from "./components/help";
 import Header from "./components/header";
 import Tabs from "./components/tabs";
