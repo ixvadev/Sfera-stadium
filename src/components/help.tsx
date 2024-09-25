@@ -12,7 +12,7 @@ function Help() {
                 <a href="">Masters</a>
             </div>
 
-            <div class  Name="text-[20px] py-[15px] hover:bg-[#FFFFFF]" >
+            <div className="text-[20px] py-[15px] hover:bg-[#FFFFFF]" >
                 <i className="fa-solid fa-user-group px-4"></i>
                 <a href="">Clients</a>
             </div>
