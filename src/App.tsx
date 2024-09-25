@@ -6,12 +6,15 @@ import { ToastContainer } from "react-toastify";
 import Register from "./pages/auth/register";
 import Master from "./pages/master";
 import Client from "./pages/client";
+import Help from "./components/help";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Login/>}/>
+        <Route path="/help" element={<Help/>}/>
+
         <Route path="/admin" element={<Admin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/master" element={<Master />} />
