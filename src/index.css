@@ -11,4 +11,8 @@
   .no-visible-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .active{
+    background-color: red;
+  }
   
