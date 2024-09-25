@@ -7,6 +7,7 @@ import Register from "./pages/auth/register";
 import Master from "./pages/master";
 import Client from "./pages/client";
 import Help from "./components/help";
+import Header from "./components/header";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/help" element={<Help/>}/>
-
+        <Route path="/header" element={<Header />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/master" element={<Master />} />
