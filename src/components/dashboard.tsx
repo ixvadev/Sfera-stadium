@@ -10,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { div } from 'framer-motion/client';
 
 ChartJS.register(
   CategoryScale,
