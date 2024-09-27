@@ -9,7 +9,7 @@ const Login: React.FC = () => {
   const userName = useRef<HTMLInputElement>(null);
   const parol = useRef<HTMLInputElement>(null);
 
-  const [loading, setLoading] = useState<boolean>(false); // Loading state
+  const [loading, setLoading] = useState<boolean>(false);
 
   interface User {
     phone: string;
@@ -23,7 +23,7 @@ const Login: React.FC = () => {
     };
 
     if (userName.current?.value && parol.current?.value) {
-      setLoading(true); // Loaderni ishga tushiramiz
+      setLoading(true);
       axios
         .post(apiUrl + "/api/v1/auth/login", user)
         .then((res: AxiosResponse) => {
@@ -42,7 +42,7 @@ const Login: React.FC = () => {
           toast.error(err.message);
         })
         .finally(() => {
-          setLoading(false); // Loaderni to'xtatamiz
+          setLoading(false);
         });
     } else {
       toast.warning("joylarni tuldiring");
@@ -101,10 +101,10 @@ const Login: React.FC = () => {
                 onClick={getLogin}
                 type="submit"
                 className="mt-5 w-full flex justify-center items-center text-white bg-[#000000] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#444545]"
-                disabled={loading} // Loading davomida tugmani disable qilamiz
+                disabled={loading}
               >
                 {loading ? (
-                  <div className="loader mr-2"></div> // Loader tugmaning o'rtasida matndan oldin ko'rinadi
+                  <div className="loader mr-2"></div>
                 ) : null}
                 {loading ? "Signing In..." : "Sign In"}
               </button>
