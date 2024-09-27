@@ -9,7 +9,8 @@ import Help from "./components/help";
 import Header from "./components/header";
 import Tabs from "./components/tabs";
 import NotConfirmed from "./pages/master/notConfirmed";
-import Index from "./pages/404 pages";
+import Index from "./pages/404 pages/NotFound";
+import NotFound from "./pages/404 pages/NotFound";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path="/master/notConfirmed" element={<NotConfirmed />} />
         <Route path="/master/confirmed" element={<Master />} />
         <Route path="/client" element={<Client />} />
-        <Route path="/*" element={<Index />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>
