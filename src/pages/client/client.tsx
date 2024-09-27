@@ -6,7 +6,6 @@ import { apiUrl } from '../../helpers/api/url';
 import { config } from '../../helpers/api/token';
 import { toast } from 'react-toastify';
 
-// DeleteModal komponenti
 const DeleteModal: React.FC<{ isOpen: boolean, onClose: () => void, onConfirm: () => void }> = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
@@ -38,14 +37,14 @@ const Client: React.FC = () => {
   }
 
   const [clients, setClients] = useState<IsUser[] | null>(null);
-  const [selectedUserId, setSelectedUserId] = useState<string | null>(null); // Foydalanuvchini tanlash
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modalni ochish/yopish holati
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function delUser(userID: string): void {
     axios.delete(apiUrl + `/api/v1/user/${userID}`, config)
       .then((res: AxiosResponse) => {
         console.log(res);
-        setClients(clients?.filter(client => client.id !== userID) || null); // Foydalanuvchini ro'yxatdan o'chirish
+        setClients(clients?.filter(client => client.id !== userID) || null);
         toast.success("User deleted successfully");
       })
       .catch((err: AxiosError) => {
@@ -69,13 +68,11 @@ const Client: React.FC = () => {
       });
   }, []);
 
-  // Modal ochish uchun funktsiya
   const handleDeleteClick = (userId: string) => {
     setSelectedUserId(userId);
     setIsModalOpen(true);
   };
 
-  // Modal tasdiqlanganda ishlatiladigan funktsiya
   const handleConfirmDelete = () => {
     if (selectedUserId) {
       delUser(selectedUserId);
@@ -133,7 +130,6 @@ const Client: React.FC = () => {
         </div>
       </div>
 
-      {/* DeleteModal komponentini qo'shish */}
       <DeleteModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

@@ -17,8 +17,31 @@ const NotConfirmed: React.FC = () => {
         role: string,
         userStatus: string
     }
-    const [notConfiUser, setNotconf] = useState<IsNotconf[] | null>(null)
+    function confUser(confuserID: string) {
+        axios.get(apiUrl + `/api/v1/user/confirmed/master/${confuserID}?USER_STATUS=MASTER_CONFIRMED`)
+            .then((res: AxiosResponse) => {
+                console.log(res);
+                toast.success('user sucsess CONFIRMED')
+            })
+            .catch((err: AxiosError) => {
+                console.log(err);
+                toast.error(err.message)
+            })
 
+    }
+    function notConfUser(notConfUserID: string) {
+        axios.get(apiUrl + `/api/v1/user/confirmed/master/${notConfUserID}?USER_STATUS=MASTER_REJECTED`, config)
+            .then((res: AxiosResponse) => {
+                console.log(res);
+                toast.success('user sucsess rejected')
+            })
+            .catch((err: AxiosError) => {
+                console.log(err);
+                toast.error(err.message)
+            })
+    }
+
+    const [notConfiUser, setNotconf] = useState<IsNotconf[] | null>(null)
     useEffect(() => {
         axios.get(apiUrl + "/api/v1/user/not/confirmed/master/list", config)
             .then((res: AxiosResponse) => {
@@ -68,8 +91,8 @@ const NotConfirmed: React.FC = () => {
                                                         <td className="py-2 px-4 border-[1px] border-black">{item.lastName}</td>
                                                         <td className="py-2 px-4 border-[1px] border-black">{item.phoneNumber}</td>
                                                         <td className="py-2 px-4 border-[1px] border-black">
-                                                            <button className="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Confirm</button>
-                                                            <button className="bg-red-500 text-white ml-2 px-4 py-1 rounded hover:bg-red-600">Reject</button>
+                                                            <button onClick={() => confUser(item.id)} className="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Confirm</button>
+                                                            <button onClick={() => notConfUser(item.id)} className="bg-red-500 text-white ml-2 px-4 py-1 rounded hover:bg-red-600">Reject</button>
                                                         </td>
                                                     </tr>
                                                 ))

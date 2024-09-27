@@ -17,8 +17,10 @@ const Master: React.FC = () => {
         role: string,
         userStatus: string
     }
+    // function isdelete(userID: string) {
+    //     axios.delete(apiUrl + '', config)
+    // }
     const [confUser, setConfUser] = useState<IsConfUser[] | null>(null)
-
     useEffect(() => {
         axios.get(apiUrl + "/api/v1/user/masters/list", config)
             .then((res: AxiosResponse) => {
@@ -66,7 +68,7 @@ const Master: React.FC = () => {
                                                     <td className="py-2 px-4 border-[1px] border-black">{item.lastName}</td>
                                                     <td className="py-2 px-4 border-[1px] border-black">{item.phoneNumber}</td>
                                                     <td className="py-2 px-4 border-[1px] border-black">
-                                                        <button className="bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Info</button>
+                                                        <button  className="bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Info</button>
                                                         <button className="bg-red-500 text-white ml-2 px-4 py-1 rounded hover:bg-red-600">Delet</button>
                                                     </td>
                                                 </tr>
