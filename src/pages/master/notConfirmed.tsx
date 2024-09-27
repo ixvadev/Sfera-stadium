@@ -18,7 +18,9 @@ const NotConfirmed: React.FC = () => {
         userStatus: string
     }
     function confUser(confuserID: string) {
-        axios.get(apiUrl + `/api/v1/user/confirmed/master/${confuserID}?USER_STATUS=MASTER_CONFIRMED`)
+        console.log(config);
+
+        axios.put(apiUrl + `/api/v1/user/confirmed/master/${confuserID}?USER_STATUS=MASTER_CONFIRMED`, {}, config)
             .then((res: AxiosResponse) => {
                 console.log(res);
                 toast.success('user sucsess CONFIRMED')
@@ -30,7 +32,9 @@ const NotConfirmed: React.FC = () => {
 
     }
     function notConfUser(notConfUserID: string) {
-        axios.get(apiUrl + `/api/v1/user/confirmed/master/${notConfUserID}?USER_STATUS=MASTER_REJECTED`, config)
+        console.log(notConfUserID);
+
+        axios.put(apiUrl + `/api/v1/user/confirmed/master/${notConfUserID}?USER_STATUS=MASTER_REJECTED`, {}, config)
             .then((res: AxiosResponse) => {
                 console.log(res);
                 toast.success('user sucsess rejected')
