@@ -6,7 +6,9 @@ import { apiUrl } from '../../helpers/api/url';
 import { config } from '../../helpers/api/token';
 import { toast } from 'react-toastify';
 
-const DeleteModal: React.FC<{ isOpen: boolean, onClose: () => void, onConfirm: () => void }> = ({ isOpen, onClose, onConfirm }) => {
+interface DD{ isOpen: boolean, onClose: () => void, onConfirm: () => void }
+
+const DeleteModal: React.FC<DD> = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
