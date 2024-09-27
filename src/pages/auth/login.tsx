@@ -25,13 +25,12 @@ const Login: React.FC = () => {
                 .then((res: AxiosResponse) => {
                     console.log(res)
                     if (res.data.data) {
-                        console.log(res.data.data.role);
                         if (res.data.data.role == "ROLE_SUPER_ADMIN") {
                             isRole('/admin')
                         } else if (res.data.data.role == "ROLE_MASTER") {
                             isRole('/master')
                         }
-                        localStorage.getItem('token' + res.data.data.token)
+                        localStorage.setItem('token', res.data.data.token)
                     } else {
                         toast.error(res.data.error.message)
                     }
