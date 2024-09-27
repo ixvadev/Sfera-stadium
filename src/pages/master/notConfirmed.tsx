@@ -55,7 +55,6 @@ const NotConfirmed: React.FC = () => {
                 } else {
                     toast.error(res.data.error.message)
                 }
-                console.log(res.data.data.object);
             }).catch((err: AxiosError) => {
                 console.log(err);
                 toast.error(err.message)
